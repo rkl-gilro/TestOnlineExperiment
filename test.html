@@ -95,7 +95,8 @@ jsPsych.init({
     timeline: trials,
     on_finish: function() {
         //jsPsych.data.displayData('csv');
-	jsPsych.data.get().localSave('csv','mydata.csv');
+	//jsPsych.data.get().localSave('csv','mydata.csv');
+	jsPsychSheet.uploadData(jsPsych.data.get().csv());
     },
     preload_images: all_images
 });
