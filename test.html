@@ -9,8 +9,8 @@
     <script src="jspsych-6.1.0/plugins/jspsych-choose-image.js"></script>
     <link href="jspsych-6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
 
-    <script src="jspsych-6.1.0/jspsychsheet.js"></script>
-    <link rel="stylesheet" href="jspsych-6.1.0/jspsychsheet.css">
+    //<script src="jspsych-6.1.0/jspsychsheet.js"></script>
+    //<link rel="stylesheet" href="jspsych-6.1.0/jspsychsheet.css">
     <style>
     h1 {text-align:center;}
     p {text-align:center;}
@@ -92,8 +92,8 @@ jsPsych.init({
     timeline: trials,
     on_finish: function() {
         //jsPsych.data.displayData('csv');
-	//jsPsych.data.get().localSave('csv','mydata.csv');
-	jsPsychSheet.uploadData(jsPsych.data.get().csv());
+	jsPsych.data.get().localSave('csv','mydata.csv');
+	//jsPsychSheet.uploadData(jsPsych.data.get().csv());
     },
     preload_images: all_images
 });
