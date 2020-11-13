@@ -4,6 +4,7 @@
     <title>Choose the best quality image</title>	
 	  
     <script src="../jspsych-6.1.0/jspsych.js"></script>
+    <script src="../plugins/jspsych-survey-html-form.js"></script>
     <script src="../jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="../jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
     <script src="../jspsych-6.1.0/plugins/jspsych-choose-image.js"></script>
@@ -23,7 +24,13 @@
 var cats = ['../data/blue.png', '../data/example_rgb.JPEG'];
 var dogs = ['../data/orange.png', '../data/example_orig.JPEG'];
 var all_images = cats.concat(dogs);
-
+	  
+var form_trial = {
+	type: 'survey-html-form',
+	preamble: '<p> How are you feeling <b>right now?</b> </p>',
+	html: '<p> I am feeling <input name="first" type="text" />, <input name="second" type="text" />, and <input name="third" type="text" />.</p>'
+};
+	  
 // this example uses fewer durations (just to make the number
 // of trials sensible).
 var factors = {
@@ -47,6 +54,7 @@ var instructions = {
        "<p>Press any key to begin.</p>",
      post_trial_gap: 2000
   };
+  trials.push(from_trial);
   trials.push(instructions);
 
 for (values of factorial_values) {
